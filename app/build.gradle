@@ -16,6 +16,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    repositories {
+        mavenCentral()
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
@@ -25,4 +32,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // This library handles authentication and authorization
+    implementation 'com.spotify.android:auth:1.0.0-alpha'
+
+    // This library handles music playback
+    implementation 'com.spotify.sdk:spotify-player-beta21-noconnect-2.18c@aar'
 }
